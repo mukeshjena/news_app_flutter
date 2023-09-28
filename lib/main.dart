@@ -1,6 +1,6 @@
-// @dart = 2.9
+import 'package:NewsApp/screens/home_screen.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NewsApp',
-      home: HomePage(),
+      home: AnimatedSplashScreen(
+        splash: Image.asset('assets/logo.png'),
+        nextScreen: const HomeScreen(),
+        splashTransition: SplashTransition.scaleTransition,
+        backgroundColor: Colors.white,
+      ),
     );
   }
 }
